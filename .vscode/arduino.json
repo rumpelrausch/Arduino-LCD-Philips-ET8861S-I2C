@@ -1,0 +1,8 @@
+{
+    "configuration": "LTO=enable,TimerClockSource=default,chip=85,clock=8internal,eesave=aenable,bod=disable,millis=enabled",
+    "board": "ATTinyCore:avr:attinyx5",
+    "port": "COM3",
+    "programmer": "ATTinyCore:arduinoasisp",
+    "sketch": "ET8861S_I2C.ino",
+    "output": "./build"
+}
