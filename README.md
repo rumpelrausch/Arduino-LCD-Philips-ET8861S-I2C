@@ -12,14 +12,13 @@ well-known HT1621 chip.
 
 The display itself contains:
 - Seven 13-segment digits
-- Two segments representing a dot "." and a colon "."
+- Two segments representing a dot (`.`) and a colon (`:`)
   right before the last two digits.
 - A number of segments representing system state like "MP3", "AUX",
   "CD", "TRACK", "SLEEP" etc.  
-  Those **are not handled** by this I2C interface.
+  Those **are not fully covered** by this I2C interface.
 
-So we basically have seven more or less alphanumeric digits and optional
-dot and colon at a fixed position.
+So we basically have seven (more or less) alphanumeric digits plus dot and colon symbols at a fixed position.
 
 ## Dev environment
 
@@ -36,12 +35,14 @@ The main file, "ET8861S_I2C.ino", provides some options as CPP definitions:
   Default: 0x14
 - SHOW_GREETING  
   1 = Shows some greeting upon power on
+- ET8861_PIN_CS, ET8861_PIN_WR and ET8861_PIN_DATA  
+  PIN definitions for display PCB connection.
 
-I2C is implemented using the default "SCL" and "DI" pins. It uses hardware based serial and is tested with ATTINY85 and ATTINY4313 (ATTINY2313 is too small).
+I2C is implemented using the default "SCL" and "DI" pins. It uses hardware based serial and is tested with ATTINY85 and ATTINY4313 (ATTINY2313 does not provide enough Flash and RAM space).
 
 ## Flashing the ATTINY
 
-The ET8861S shares pins with I2C and flashing. Disconnecting the ET8861S during flash operation is recommended.
+The ET8861S shares pins with I2C and flashing. Disconnecting the I2C bus during flash operation is recommended.
 
 ## I2C command set
 
@@ -49,7 +50,7 @@ The implementation only provides write access, no read or write/read.
 
 | command | data bytes | description |
 | --- | --- | --- |
-| 0x0 | 0 | Clear the display |
+| 0x0 | 0 | Clears the display |
 | 0x1 | 7 | Shows an ASCII string.<br>Not all characters are supported,<br>see ```ET8861.cpp```.|
 | 0x2 | 2 | Shows an ASCII character at a given position.<br> The first data byte represents the position (0-6), the second one the character. |
 | 0x3 | 1 | Enables / disables the dot and colon symbols (at their fixed position).<br>The data byte is bit-coded: Bit 0 represents colon, bit 1 dot. |
@@ -63,4 +64,9 @@ position. Example:
 - Send a string (command 0x1) "HELLO".
 
 Result: "`HE LO`" with the enabled segment at position 2.
+
+## Attributions
+
+- TinyWireS from  
+  https://github.com/rambo/TinyWire
 
