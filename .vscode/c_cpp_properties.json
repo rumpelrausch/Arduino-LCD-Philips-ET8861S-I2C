@@ -3,7 +3,7 @@
     "configurations": [
         {
             "name": "Arduino",
-            "compilerPath": "C:\\Users\\flp\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\bin\\avr-g++",
+            "compilerPath": "${env:USERPROFILE}\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\bin\\avr-g++",
             "compilerArgs": [
                 "-w",
                 "-std=gnu++11",
@@ -15,14 +15,14 @@
             ],
             "intelliSenseMode": "gcc-x64",
             "includePath": [
-                "C:\\Users\\flp\\AppData\\Local\\Arduino15\\packages\\ATTinyCore\\hardware\\avr\\1.5.2\\cores\\tiny",
-                "C:\\Users\\flp\\AppData\\Local\\Arduino15\\packages\\ATTinyCore\\hardware\\avr\\1.5.2\\variants\\tinyX5",
-                "c:\\users\\flp\\appdata\\local\\arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\lib\\gcc\\avr\\7.3.0\\include",
-                "c:\\users\\flp\\appdata\\local\\arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\lib\\gcc\\avr\\7.3.0\\include-fixed",
-                "c:\\users\\flp\\appdata\\local\\arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\avr\\include"
+                "${env:USERPROFILE}\\AppData\\Local\\Arduino15\\packages\\ATTinyCore\\hardware\\avr\\1.5.2\\cores\\tiny",
+                "${env:USERPROFILE}\\AppData\\Local\\Arduino15\\packages\\ATTinyCore\\hardware\\avr\\1.5.2\\variants\\tinyX5",
+                "${env:USERPROFILE}\\appdata\\local\\arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\lib\\gcc\\avr\\7.3.0\\include",
+                "${env:USERPROFILE}\\appdata\\local\\arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\lib\\gcc\\avr\\7.3.0\\include-fixed",
+                "${env:USERPROFILE}\\appdata\\local\\arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7\\avr\\include"
             ],
             "forcedInclude": [
-                "C:\\Users\\flp\\AppData\\Local\\Arduino15\\packages\\ATTinyCore\\hardware\\avr\\1.5.2\\cores\\tiny\\Arduino.h"
+                "${env:USERPROFILE}\\AppData\\Local\\Arduino15\\packages\\ATTinyCore\\hardware\\avr\\1.5.2\\cores\\tiny\\Arduino.h"
             ],
             "cStandard": "c11",
             "cppStandard": "c++11",
