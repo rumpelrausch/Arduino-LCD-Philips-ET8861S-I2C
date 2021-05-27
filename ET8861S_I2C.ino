@@ -50,9 +50,10 @@ void receiveEvent(uint8_t bytesInBuffer) {
   command = TinyWireS.receive();
 
   if (command == COMMAND_CLEAR && bytesInBuffer == 1) {
-    sprintf(displayString, "       ");
+    stringPositionFilter = 0;
     ET8861.unsetAdditionalSymbol(0xFF);
-    isDirty = true;
+    sprintf(displayString, "       ");
+    ET8861.setString(displayString);
   }
 
   if (command == COMMAND_SET_STRING && bytesInBuffer == 8) {
