@@ -119,6 +119,7 @@ void ET8861Master::enable() {
   delay(10);
   sendCommand(ET8861_COMMAND_SYS_ENABLE);  // SYS Enable
   sendCommand(ET8861_COMMAND_LCD_ON);      // LCD ON
+  sendCommand(0b00011000); // use on-chip RC osc
   sendCommand(0b00101001); // bias & COM
   clear();
 }
